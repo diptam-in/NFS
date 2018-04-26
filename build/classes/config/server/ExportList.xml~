@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<exportList>
+    <entry>
+        <dir>
+            /home/diptam/Pictures
+        </dir>
+        <permission>
+            <read>true</read>
+            <write>false</write>
+        </permission>
+        <exportTo>
+            everyone
+        </exportTo>
+    </entry>
+    
+    <entry>
+        <dir>
+            /home/diptam/Downloads
+        </dir>
+        <permission>
+            <read>true</read>
+            <write>true</write>
+        </permission>
+        <exportTo>
+            everyone
+        </exportTo>
+    </entry>
+</exportList>
