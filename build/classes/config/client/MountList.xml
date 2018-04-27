@@ -97,4 +97,12 @@ and open the template in the editor.
 <local_dir>/home/diptam/DS1</local_dir>
 <remote_dir>/home/diptam/Downloads</remote_dir>
 </record>
+<record>
+<local_dir>/home/diptam/DS1/</local_dir>
+<remote_dir>/home/diptam/Downloads/</remote_dir>
+</record>
+<record>
+<local_dir>/home/diptam/DS1/</local_dir>
+<remote_dir>/home/diptam/Pictures/</remote_dir>
+</record>
 </MountList>

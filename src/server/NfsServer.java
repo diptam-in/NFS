@@ -176,6 +176,13 @@ public class NfsServer implements NfsInterface  {
             res.setStatus(Stat.NF_ERR);
             return res.build();
         }
+        
+        if(!clientReq.isRead())
+        {
+            res.setStatus(Stat.NF_ERR);
+            return res.build();
+        }
+        
         String target;
         if(clientReq.getFileOrDirName()!=null)
             target=clientReq.getRemoteMountDir()+clientReq.getFileOrDirName();
@@ -231,6 +238,12 @@ public class NfsServer implements NfsInterface  {
         AttrStat.Builder attrstat =AttrStat.newBuilder(); 
         
         if(clientReq==null)
+        {
+            attrstat.setStatus(Stat.NF_ERR);
+            return attrstat.build();
+        }
+        
+        if(!clientReq.isWrite())
         {
             attrstat.setStatus(Stat.NF_ERR);
             return attrstat.build();
@@ -358,6 +371,12 @@ public class NfsServer implements NfsInterface  {
             dirOpRes.setStatus(Stat.NF_ERR);
             return dirOpRes.build();
         }
+        if(!clientReq.isWrite())
+        {
+//            System.out.println("[DEBUG] Found Null");
+            dirOpRes.setStatus(Stat.NF_ERR);
+            return dirOpRes.build();
+        }
         
         String target;
         if(clientReq.getFileOrDirName()!=null)
@@ -401,6 +420,13 @@ public class NfsServer implements NfsInterface  {
             dirOpRes.setStatus(Stat.NF_ERR);
             return dirOpRes.build();
         }
+        
+        if(!clientReq.isWrite())
+        {
+            dirOpRes.setStatus(Stat.NF_ERR);
+            return dirOpRes.build();
+        }
+        
         SetAttr setattr=createargs.getSetattr();
         String target;
         if(clientReq.getFileOrDirName()!=null)
